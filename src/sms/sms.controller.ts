@@ -18,4 +18,10 @@ export default class SmsController {
     const { phoneNumber } = body;
     await this.smsService.initiatePhoneNumberVerification(phoneNumber);
   }
+
+  @Post('recieve')
+  async recieveCall(@Body() body: any) {
+    console.log(body);
+    // await this.smsService.initiatePhoneNumberVerification(phoneNumber);
+  }
 }

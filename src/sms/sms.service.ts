@@ -13,11 +13,11 @@ export class SmsService {
 
   initiatePhoneNumberVerification(phoneNumber: string) {
     const serviceSid = this.configService.get(
-      'TWILIO_VERIFICATION_SERVICE_SID_WHATSAPP',
+      'TWILIO_VERIFICATION_SERVICE_SID_CALL',
     );
 
     return this.twilioClient.verify
       .services(serviceSid)
-      .verifications.create({ to: phoneNumber, channel: 'whatsapp' });
+      .verifications.create({ to: phoneNumber, channel: 'call' });
   }
 }
